@@ -1,12 +1,10 @@
 #include"pbc_inshort.h"
-void helloworld(){
-	puts("hello world!!!!!!\n");
-}
 
 void init_pairing(pairing_t pairing){
+	char filedir[] = "param/a.param";
+	printf("param :%s\n",filedir);
+	FILE * fp = fopen(filedir,"r");
 	char param[2048];
-	FILE * fp;
-	fp = fopen("param/d159.param","r");
 	size_t count = fread(param,1,2048,fp);
 	if (!count) pbc_die("input error");
 	fclose(fp);
